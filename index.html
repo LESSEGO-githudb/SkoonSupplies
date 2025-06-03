@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skoon Supplies</title>
+  <link rel="stylesheet" href="beauty.css" />
+</head>
+
+<body class="main-body">
+  <nav>
+    <header class="main-header">
+      <img src="images/Screenshot_2024-12-16_111627-removebg-preview__5_-removebg-preview.png" alt="Skoon Supplies Logo" width="150" />
+      <h3>Welcome to Skoon Supplies</h3>
+    </header>
+    <nav class="navbar" style="background: rgb(0, 0, 0); display: flex; position: fixed; top: 0; width: 100%; z-index: 999; height: 60px;">
+      <a href="index.html" class="logo">Skoon Supplies</a>
+      <button class="hamburger" id="hamburger">☰</button>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="products.html">Products/Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </nav>
+
+  <section class="content-section">
+    <h2>No Such Thing As Too Clean</h2>
+    <p>At Skoon Supplies, we pride ourselves on our wide selection of hygienic products.</p>
+    <ul>
+      <li>Pine Gel</li>
+      <li>Dishwashing Liquid</li>
+      <li>Washing Powder</li>
+      <li>Thick Bleach</li>
+      <li>Fabric Softener</li>
+    </ul>
+
+    <h2>Premium Soap Supply</h2>
+    <p>Check out some of our products below:</p>
+
+    <table class="product-table">
+      <tr>
+        <td><img src="images/Products/dispensers.png" alt="250ml Hand Sanitizer" width="400" height="300" /></td>
+      </tr>
+      <tr>
+        <td><p class="product-title">250ml Hand Sanitizer</p></td>
+      </tr>
+      <tr>
+        <td><img src="images/Products/ccleaning gloves.png" alt="Yellow Rubber Gloves" width="400" height="300" /></td>
+      </tr>
+      <tr>
+        <td><p class="product-title">Yellow Skoon Supplies Rubber Cleaning Gloves</p></td>
+      </tr>
+      <tr>
+        <td><img src="images/Products/Untitled_design.jpg" alt="5L Thick Bleach" width="400" height="300" /></td>
+      </tr>
+      <tr>
+        <td><p class="product-desc">5L Thick Bleach</p></td>
+      </tr>
+      <tr>
+        <td><img src="images/Products/25l pine gels.png" alt="25L Pine Gel" width="400" height="300" /></td>
+      </tr>
+      <tr>
+        <td><p class="product-title">25L Pine Gels</p></td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="content-section">
+    <h2>Our story</h2>
+    <p>At Skoon Supplies we believe in producing top quality products.</p>
+    <p>We believe in the power of community and strive to make a positive impact through our products. Whether you're looking for industrial-grade or everyday-use cleaning supplies, Skoon Supplies is here to deliver.</p>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2024 Skoon Supplies. All rights reserved.</p>
+    <p>Follow us on:</p>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61574626102339" target="_blank">Facebook</a> |
+      <a href="https://www.instagram.com/skoonsupplies/" target="_blank">Instagram</a> |
+      <a href="https://x.com/skoonsuppl87058" target="_blank">Twitter</a>
+    </p>
+    <p>Contact Us:</p>
+    <p>
+      Phone: (067) 722 5470<br />
+      Email: <a href="mailto:skoonsupplies@gmail.com">skoonsupplies@gmail.com</a><br />
+      Address: 4532 Medal Street, Alexandra Township. Johannesburg
+    </p>
+  </footer>
+
+  <script src="beauty.js"></script>
+
+  <!-- Zoom Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const productImages = document.querySelectorAll(".product-table img");
+
+      productImages.forEach(img => {
+        img.addEventListener("click", function () {
+          const overlay = document.createElement("div");
+          overlay.style.position = "fixed";
+          overlay.style.top = 0;
+          overlay.style.left = 0;
+          overlay.style.width = "100%";
+          overlay.style.height = "100%";
+          overlay.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+          overlay.style.display = "flex";
+          overlay.style.alignItems = "center";
+          overlay.style.justifyContent = "center";
+          overlay.style.zIndex = "9999";
+
+          const zoomedImg = document.createElement("img");
+          zoomedImg.src = img.src;
+          zoomedImg.alt = img.alt;
+          zoomedImg.style.maxWidth = "90%";
+          zoomedImg.style.maxHeight = "90%";
+          zoomedImg.style.border = "5px solid white";
+          zoomedImg.style.borderRadius = "10px";
+          overlay.appendChild(zoomedImg);
+
+          overlay.addEventListener("click", function () {
+            document.body.removeChild(overlay);
+          });
+
+          document.body.appendChild(overlay);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

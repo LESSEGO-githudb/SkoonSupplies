@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Products - Skoon Supplies</title>
+    <link rel="stylesheet" href="beauty.css" />
+</head>
+
+<body class="main-body"> 
+    <header class="main-header">
+        <img src="images/Screenshot_2024-12-16_111627-removebg-preview__5_-removebg-preview.png" alt="Skoon Supplies Logo" width="150" />
+        <h3>Our Super Products</h3>
+    </header>
+    
+    <nav class="navbar" style="background: rgb(0, 0, 0) !important; display: flex !important; position: fixed !important; top: 0 !important; width: 100% !important; z-index: 999 !important; height: 60px !important;">
+        <a href="products.html" class="logo">Skoon Supplies</a>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul id="nav-menu" class="nav-menu">
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="products.html">Products/Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="content-section"> 
+        <p>At Skoon Supplies, we take pride in crafting a wide range of quality goods.</p> 
+        <p>From classic cakes to modern pastries, we offer something for everyone. Here’s a look at some of our bestsellers:</p>
+        
+        <div class="product">
+            <h2>Outdoor Products</h2>
+            <img src="images/Products/25l black dip.png" alt="Black Dip" width="300" />
+            <p><strong>Black Dip:</strong> For superior cleaning in and around drains, refuse areas and compactors!</p>
+        </div>
+        <div class="product">
+            <img src="images/Products/degreaser.png" alt="Degreaser" width="300" />
+            <p><strong>Degreaser:</strong> A specialized cleaning agent formulated to tackle the challenging task of removing grease, oil, and other tough contaminants from surfaces in industrial settings.</p>
+        </div>
+
+        <div class="product">
+            <h2>Indoor Products</h2>
+            <img src="images/Products/5l Pine gel.png" alt="Pine Gel" width="300" />
+            <p><strong>Pine Gel:</strong> A multi-purpose cleaner made from a mixture of pine oil and surfactants.</p>
+        </div>
+
+        <div class="product">
+            <img src="images/Products/5l dishwasher.png" alt="Dishwasher" width="300" />
+            <p><strong>Dishwasher:</strong> A detergent used to assist in dishwashing including a highly-foaming mixture of surfactants with low skin irritation.</p>
+        </div>
+
+        <div class="product">
+            <img src="images/Products/Untitled_design.jpg" alt="Thick Bleach" width="300" />
+            <p><strong>Thick Bleach:</strong> A cleaner that is formulated with a thickening agent, which allows it to cling to surfaces for longer to effectively kill germs and bacteria.</p>
+        </div>
+
+        <div class="product">
+            <h2>Body Products</h2>
+            <img src="images/Products/dispensers.png" alt="Scented Hand Sanitizer" width="300" />
+            <p><strong>Scented Hand Sanitizer:</strong> A disinfectant and antiseptic that is used to destroy microorganisms (pathogens) such as harmful viruses, fungi, and bacteria.</p>
+        </div>
+
+        <div class="product">
+            <img src="images/Products/bubble bath.png" alt="Bubble Bath" width="300" />
+            <p><strong>Bubble Bath:</strong> A pleasant fragrance that creates lots of bubbles.</p>
+        </div>
+
+    </section>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Skoon Supplies. All rights reserved.</p>
+        <p>Follow us on:</p>
+        <p>
+            <a href="https://www.facebook.com/profile.php?id=61574626102339" target="_blank" style="text-decoration: none; color: #333; font-weight: bold;">Facebook</a> |
+            <a href="https://www.instagram.com/skoonsupplies/" target="_blank" style="text-decoration: none; color: #333; font-weight: bold;">Instagram</a> |
+            <a href="https://x.com/skoonsuppl87058" target="_blank" style="text-decoration: none; color: #333; font-weight: bold;">Twitter</a>
+        </p>
+        <p>Contact Us:</p>
+        <p>
+            Phone: (067) 722 5470<br />
+            Email: <a href="mailto:skoonsupplies@gmail.com" style="text-decoration: none; color: #333; font-weight: bold;">skoonsupplies@gmail.com</a><br />
+            Address: 4532 Medal Street, Alexandra Township. Johannesburg
+        </p>
+    </footer>
+
+    <script src="beauty.js"></script>
+
+    <!-- Zoom effect script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const productImages = document.querySelectorAll(".product img");
+
+        productImages.forEach(img => {
+          img.style.cursor = "pointer";  // Show pointer cursor on hover
+          img.addEventListener("click", function () {
+            // Create overlay
+            const overlay = document.createElement("div");
+            overlay.style.position = "fixed";
+            overlay.style.top = 0;
+            overlay.style.left = 0;
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+            overlay.style.display = "flex";
+            overlay.style.alignItems = "center";
+            overlay.style.justifyContent = "center";
+            overlay.style.zIndex = "9999";
+
+            // Create zoomed image
+            const zoomedImg = document.createElement("img");
+            zoomedImg.src = img.src;
+            zoomedImg.alt = img.alt;
+            zoomedImg.style.maxWidth = "90%";
+            zoomedImg.style.maxHeight = "90%";
+            zoomedImg.style.border = "5px solid white";
+            zoomedImg.style.borderRadius = "10px";
+
+            overlay.appendChild(zoomedImg);
+
+            // Remove overlay on click
+            overlay.addEventListener("click", function () {
+              document.body.removeChild(overlay);
+            });
+
+            document.body.appendChild(overlay);
+          });
+        });
+      });
+    </script>
+
+    <script>
+      // Auto-update year in footer
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

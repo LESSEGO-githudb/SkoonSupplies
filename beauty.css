@@ -1,0 +1,214 @@
+
+.main-body {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+.main-header {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 100px;
+    text-align: center;
+    z-index: 10;
+    font-size: large;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    padding: 1rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    z-index: 9;
+}
+    .navbar .logo {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    .nav-menu {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .nav-menu li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .nav-menu li a:hover {
+        color: #ccc; 
+    }
+    .hamburger {
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        color: white;
+        display: none;
+        cursor: pointer;
+    }
+
+.content-section {
+    text-align: center;
+    padding: 20px;
+    margin-top: 200px;
+}
+
+.gallery-table {
+    width: 100%;
+}
+
+.gallery-table td {
+    padding: 10px;
+}
+
+.site-footer {
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    text-align: center;
+}
+
+.site-footer a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #f8f9fa, #e0f7fa);
+    margin: 0;
+    padding: 0;
+}
+
+
+.contact-section {
+    max-width: 550px;
+    margin: 60px auto;
+    padding: 30px 40px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-section h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+
+.contact-section label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+}
+
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+    border-color: #00acc1;
+    outline: none;
+}
+
+
+input.error,
+textarea.error {
+    border: 2px solid red;
+}
+
+
+.contact-section button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00acc1;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: #008b9a;
+}
+
+.product-table {
+    margin: 0 auto;
+    text-align: center; 
+}
+
+.product-table td {
+    padding: 20px;
+}
+
+/* Show hamburger and hide menu on small screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .nav-menu.show-menu {
+        display: flex;
+    }
+}
+.product-table img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-table img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gallery - Skoon Supplies</title>
+    <link rel="stylesheet" href="beauty.css" />
+</head>
+<body class="main-body">
+
+    <header class="main-header">
+        <img src="images/Screenshot_2024-12-16_111627-removebg-preview__5_-removebg-preview.png" alt="Skoon Supplies Logo" width="150" />
+        <h3>Gallery</h3>
+    </header>
+
+    <nav class="navbar" style="background: rgb(0, 0, 0) !important; display: flex !important; position: fixed !important; top: 0 !important; width: 100% !important; z-index: 999 !important; height: 60px !important;">
+        <a href="gallery.html" class="logo">Skoon Supplies</a>
+        <button class="hamburger" id="hamburger">☰</button>
+        <ul id="nav-menu" class="nav-menu">
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="products.html">Products/Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="content-section">
+        <h2>Our Quality Creations</h2>
+        <p>Feast your eyes on some of our most quality creations from Skoon Supplies!</p>
+        <table class="gallery-table">
+            <tr>
+                <td><img src="images/Products/25l black dip.png" alt="Product 1" width="200" height="150" /></td>
+                <td><img src="images/Products/25l pine gels.png" alt="Product 2" width="200" height="150" /></td>
+                <td><img src="images/Products/5l dishwasher.png" alt="Product 3" width="200" height="150" /></td>
+            </tr>
+            <tr>
+                <td><img src="images/Products/5l Pine gel.png" alt="Product 4" width="200" height="150" /></td>
+                <td><img src="images/Products/ble 25s (1).png" alt="Product 5" width="200" height="150" /></td>
+                <td><img src="images/Products/bubble bath.png" alt="Product 6" width="200" height="150" /></td>
+            </tr>
+            <tr>
+                <td><img src="images/Products/ccleaning gloves.png" alt="Product 7" width="200" height="150" /></td>
+                <td><img src="images/Products/degreaser.png" alt="Product 8" width="200" height="150" /></td>
+                <td><img src="images/Products/dispensers.png" alt="Product 9" width="200" height="150" /></td>
+            </tr>
+            <tr>
+                <td><img src="images/Products/factory workers on the job.jpg" alt="Product 10" width="200" height="150" /></td>
+                <td><img src="images/Products/other dispensers.png" alt="Product 11" width="200" height="150" /></td>
+                <td><img src="images/Products/sta soft at the factory.png" alt="Product 12" width="200" height="150" /></td>
+            </tr>
+        </table>
+    </section>
+
+    <footer class="site-footer">
+        <p>&copy; <span id="year"></span> Skon Supplies. All rights reserved.</p>
+        <p>Follow us on:</p>
+        <p>
+            <a href="https://www.facebook.com/profile.php?id=61574626102339" target="_blank">Facebook</a> |
+            <a href="https://www.instagram.com/skoonsupplies/" target="_blank">Instagram</a> |
+            <a href="https://x.com/skoonsuppl87058" target="_blank">Twitter</a>
+        </p>
+        <p>Contact Us:</p>
+        <p>
+            Phone: (067) 722 5470<br />
+            Email: <a href="mailto:skoonsupplies@gmail.com">skoonsupplies@gmail.com</a><br />
+            Address: 4532 Medal Street, Alexandra Township. Johannesburg
+        </p>
+    </footer>
+
+    <script src="beauty.js"></script>
+
+    <!-- Zoom effect script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const galleryImages = document.querySelectorAll(".gallery-table img");
+
+        galleryImages.forEach(img => {
+          img.style.cursor = "pointer";  // Change cursor on hover to indicate clickability
+          img.addEventListener("click", function () {
+            // Create overlay
+            const overlay = document.createElement("div");
+            overlay.style.position = "fixed";
+            overlay.style.top = 0;
+            overlay.style.left = 0;
+            overlay.style.width = "100%";
+            overlay.style.height = "100%";
+            overlay.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+            overlay.style.display = "flex";
+            overlay.style.alignItems = "center";
+            overlay.style.justifyContent = "center";
+            overlay.style.zIndex = "9999";
+
+            // Create zoomed image
+            const zoomedImg = document.createElement("img");
+            zoomedImg.src = img.src;
+            zoomedImg.alt = img.alt;
+            zoomedImg.style.maxWidth = "90%";
+            zoomedImg.style.maxHeight = "90%";
+            zoomedImg.style.border = "5px solid white";
+            zoomedImg.style.borderRadius = "10px";
+            overlay.appendChild(zoomedImg);
+
+            // Close overlay on click
+            overlay.addEventListener("click", function () {
+              document.body.removeChild(overlay);
+            });
+
+            document.body.appendChild(overlay);
+          });
+        });
+      });
+    </script>
+
+</body>
+</html>
